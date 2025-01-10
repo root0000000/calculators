@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="nnn.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Proste Dzialania</h1>
+      <p>Podaj pierwszą liczbę: <input id="num1" type="number" /></p>
+      <p>Podaj drugą liczbę: <input id="num2" type="number" /></p>
+      <div class="button">
+        <button onclick="performAddition()">DODAWANIE</button>
+        <button onclick="performSubtraction()">ODEJMOWANIE</button>
+        <button onclick="performMultiplication()">MNOZENIE</button>
+        <button onclick="performDivision()">DZIELENIE</button>
+        <div style="margin-top: 50px">
+          <span id="operation">Wynik dzialania wynosi:</span>
+          <span id="result">-</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function performAddition() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 + num2;
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Prosze uzupelnic obie liczby");
+        }
+        document.getElementById("operation").textContent =
+          "Wynik dodawania wynosi:";
+        document.getElementById("result").textContent = result;
+      }
+
+      function performSubtraction() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 - num2;
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Prosze uzupelnic obie liczby");
+        }
+        document.getElementById("operation").textContent =
+          "Wynik odejmowania wynosi:";
+        document.getElementById("result").textContent = result;
+      }
+
+      function performMultiplication() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 * num2;
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Prosze uzupelnic obie liczby");
+        }
+        document.getElementById("operation").textContent =
+          "Wynik mnożenia wynosi:";
+        document.getElementById("result").textContent = result;
+      }
+
+      function performDivision() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        if (isNaN(num1) || isNaN(num2)) {
+          alert("Prosze uzupelnic obie liczby");
+        }
+
+        if (num2 === 0) {
+          document.getElementById("operation").textContent =
+            "Wynik dzielenia wynosi:";
+          document.getElementById("result").textContent =
+            "Nie mozna dzielic przez 0!";
+        } else {
+          const result = num1 / num2;
+          document.getElementById("operation").textContent =
+            "Wynik dzielenia wynosi:";
+          document.getElementById("result").textContent = result;
+        }
+      }
+    </script>
+  </body>
+</html>
